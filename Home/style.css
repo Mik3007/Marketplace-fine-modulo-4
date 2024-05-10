@@ -54,3 +54,12 @@ form input label {
 form input label div {
   width: 9px;
 }
+
+.card-img-top {
+   min-width: 100px; 
+   max-width: 150px; 
+}
+
+#container-items {
+    display: flex;
+}

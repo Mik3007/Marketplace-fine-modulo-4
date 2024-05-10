@@ -140,3 +140,7 @@ const deleteItem = async (id) => {
     throw new Error("Error: " + errore);
   }
 };
+
+function clearForm {
+    
+}
