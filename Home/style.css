@@ -1,60 +1,56 @@
 /* NAV E LOGO IN COMUNE PER LE PAGINE HTML */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 nav {
-    position: fixed;
-    background-color: black;
-    color: white;
-    height: 90px;
+  position: fixed;
+  background-color: black;
+  color: white;
+  height: 90px;
 }
 
-.nav , a {
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 25px;
+.nav,
+a {
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 25px;
 }
 
 .logo {
-    height: 50px;
+  height: 50px;
 }
 
 /* TITOLO PER IL FORM  */
 h1 {
-    text-align: center;
-    margin-top: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
-
-
-
-
 
 /* ----------------- CSS PER LA PAG BACKOFFICE -------------------- */
 
 /* STYLE PER IL FORM */
 
 section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
 
 form {
-    width: 50rem;
-    background-color: aqua;
-    font-size: 25px;
+  width: 50rem;
+  background-color: aqua;
+  font-size: 25px;
 }
 
 form input label {
-    width: 9px;
-    border: 1px solid rgb(184, 181, 181);
+  width: 9px;
+  border: 1px solid rgb(184, 181, 181);
 }
 
 form input label div {
-    width: 9px;
+  width: 9px;
 }
-
