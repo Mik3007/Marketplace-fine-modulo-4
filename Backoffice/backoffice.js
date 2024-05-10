@@ -1,5 +1,5 @@
 const url = "https://striveschool-api.herokuapp.com/api/product/"
-let idItems = new URLSearchParams(window.location.search).get('id');
+let idItem = new URLSearchParams(window.location.search).get('id');
 
 // creo una funzione per creare un nuovo elemento, prendendo il valore inserito nel form dall'utente.
 
@@ -55,6 +55,7 @@ window.onload = async () => {
                 <p class="card-text">${item.price} €</p> 
                 <button onclick="editItem('${item._id}')" type="button" class="btn btn-primary">Edit</button>
                 <button onclick="deleteItem('${item._id}')" type="button" class="btn btn-primary">Delete</button>
+                <button onclick="updateItem('${item._id}')" type="button" class="btn btn-primary">Save Changes</button>
         </div>
         </div>
         `;
@@ -90,7 +91,7 @@ const updateItem = async (id) => {
     const description = document.querySelector('.description-item').value;
 
     const updatedItem = { name:name, brand:brand, price:price, imageUrl:imageUrl, description:description,};
-
+    console.log(id);
     const response = await fetch(url + id, {
         method: "PUT",
         headers: {
