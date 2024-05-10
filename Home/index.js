@@ -21,7 +21,8 @@ window.onload = async() => {
                 <h5 class="card-title">${item.name}</h5>
                 <p class="card-text">${item.brand}</p>
                 <p class="card-text">${item.price} €</p> 
-               <p> <button type="button" class="btn btn-primary">Details</button> <button type="button" class="btn btn-primary">Edit/Delete</button> </p>
+               <p> <button type="button" class="btn btn-primary">Details</button> 
+               <button type="button" class="btn btn-primary"><a href=".." target="_blank"></a>Edit/Delete</button> </p>
         </div>
         </div>
         `;
