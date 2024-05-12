@@ -24,15 +24,14 @@ const detail = async () => {
     let detailItem = document.getElementById('detailCard');
     
         detailItem.innerHTML += `  
-            <div class="card draggable col-sm-12 col-md-4 col-lg-3 cardItem" style="width: 18rem">
+            <div class="card draggable col-12 cardItem my-5" style="width: 18rem">
                 <img src="${item.imageUrl}" class="card-img-top" alt="...">
             <div class="card-body">
                     <h5 class="card-title">${item.name}</h5>
                     <p class="card-text">${item.brand}</p>
                     <p class="card-text">${item.price} €</p> 
                     <p class="card-text">${item.description}</p>
-                    <button type="button"><a href="/Backoffice/backoffice.html">Add to Cart</a></button>
-                    <button type="button"><a href="/Home/index.html">home</a></button>
+                    <button class="button-detail-home mx-0" type="button"><a href="/Home/index.html">Home</a></button>
             </div>
             </div>
             `;

@@ -50,13 +50,13 @@ window.onload = async () => {
     listItems.innerHTML += `  
         <div class="card draggable col-12 col-sm-6 col-md-4 col-lg-3 mt-5" style="width: 18rem">
             <img src="${item.imageUrl}" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div>
                 <h5 class="card-title">${item.name}</h5>
                 <p class="card-text">${item.brand}</p>
                 <p class="card-text">${item.price} €</p> 
-                <button onclick="editItem('${item._id}')" type="button" class="btn btn-primary">Edit</button>
-                <button onclick="deleteItem('${item._id}')" type="button" class="btn btn-danger">Delete</button>
-                <button onclick="updateItem('${item._id}')" type="button" class="btn btn-success mt-2 ">Save Changes</button>
+                <button onclick="editItem('${item._id}')" type="button" class="btn btn-primary mb-3">Edit</button>
+                <button onclick="deleteItem('${item._id}')" type="button" class="btn btn-danger mb-3">Delete</button>
+                <button onclick="updateItem('${item._id}')" type="button" class="btn btn-success mb-3">Save Changes</button>
         </div>
         </div>
         `;

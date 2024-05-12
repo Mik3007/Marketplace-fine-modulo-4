@@ -1,8 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&family=Sedan+SC&display=swap");
+
 /* NAV E LOGO IN COMUNE PER LE PAGINE HTML */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Reddit Sans", sans-serif;
+  background-color: #ccc;
 }
 
 nav {
@@ -42,7 +49,8 @@ a {
   color: white;
 }
 
-.hero, a:hoover {
+.hero,
+a:hoover {
   opacity: 0.8;
 }
 
@@ -64,6 +72,10 @@ h1 {
 
 /* STYLE PER IL FORM */
 
+.titolo-add {
+  color: rgb(10, 98, 245);
+}
+
 section {
   display: flex;
   justify-content: center;
@@ -73,8 +85,9 @@ section {
 
 form {
   width: 50rem;
-  background-color: aqua;
-  font-size: 25px;
+  background-color: rgb(10, 98, 245);
+  font-size: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 form input label {
@@ -95,45 +108,50 @@ form input label div {
   display: flex;
 }
 
+/* MODIFICHE PER IL FOOTER, SPAZIATURE E COLORI */
+
+footer {
+  background-color: black;
+  color: #0056b3;
+  margin-top: 150px;
+}
+
 /* AGGIUNGO UN PO DI STILE ALLE CARD */
 
-
-/* Stile per uniformare le card */
+/* Stile per le card con trazizioni in hoover, aumentando la grandezza con scale*/
 .card {
   width: 16rem;
   margin-bottom: 32px;
   margin: 0 20px;
   border: 1px solid #ccc;
+  background-color: #bababa;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-  transition: box-shadow 0.3s ease; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombra più marcata */
-  transform: scale(1.10); /* Effetto di scala */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
 }
 
-/* Stile per l'immagine della card */
+/* Stile per l'immagine della card modifiche titolo, testo ecc */
 .card-img-top {
   height: 300px;
   object-fit: contain;
 }
 
-/* Stile per il corpo della card */
 .card-body {
   padding: 15px;
 }
 
-/* Stile per il titolo della card */
 .card-title {
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* Stile per il testo della card */
 .card-text {
   margin-bottom: 10px;
 }
@@ -148,6 +166,8 @@ form input label div {
   background-color: #495057;
 }
 
+/* MODIFICHE PER I BOTTONI DELLA HOME INDEX */
+
 .button-card-home {
   color: black;
   font-size: 16px;
@@ -160,7 +180,7 @@ button {
   background-color: red;
 }
 
-.button-details{
+.button-details {
   background-color: aqua;
   padding: 0 5px;
   margin-right: 50px;
@@ -168,4 +188,21 @@ button {
 
 .body-card-backoffice {
   background-color: aqua;
+}
+
+.container-card-index {
+  margin-top: 130px;
+}
+
+/* MODIFICHE PER LA PAG DETAIL, BOTTONE HOME */
+
+#detailCard{
+  display: flex;
+  justify-content: center;
+}
+
+.button-detail-home {
+  background-color: #0056b3;
+  padding-right: 15px;
+  color: white;
 }
