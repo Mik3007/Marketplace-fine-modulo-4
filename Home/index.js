@@ -19,7 +19,7 @@ window.onload = async() => {
 
     items.forEach((item) => {
         divItems.innerHTML += `
-            <div class="card draggable mb-3 col col-sm-6 col-md-4 col-lg-3" style="width: 16rem;">
+            <div class="card draggable mb-3 col-sm-12 col-md-6 col-lg-3">
                 <img src="${item.imageUrl}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${item.name}</h5>
