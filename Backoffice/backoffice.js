@@ -22,6 +22,13 @@ const createItem = async () => {
     body: JSON.stringify(newItem),
   });
   if (response.ok) {
+
+    document.querySelector(".name-item").value = "";
+    document.querySelector(".brand-item").value = "";
+    document.querySelector(".price-item").value = "";
+    document.querySelector(".img-item").value = "";
+    document.querySelector(".description-item").value = "";
+    
     alert("new item insert");
   } else {
     throw new Error("Errore HTTP: " + response.status);
@@ -48,17 +55,27 @@ window.onload = async () => {
 
   items.forEach((item) => {
     listItems.innerHTML += `  
-        <div class="card draggable col-12 col-sm-6 col-md-4 col-lg-3 mt-5" style="width: 18rem">
-            <img src="${item.imageUrl}" class="card-img-top" alt="...">
-        <div>
-                <h5 class="card-title">${item.name}</h5>
-                <p class="card-text">${item.brand}</p>
-                <p class="card-text">${item.price} €</p> 
-                <button onclick="editItem('${item._id}')" type="button" class="btn btn-primary mb-3">Edit</button>
-                <button onclick="deleteItem('${item._id}')" type="button" class="btn btn-danger mb-3">Delete</button>
-                <button onclick="updateItem('${item._id}')" type="button" class="btn btn-success mb-3">Save Changes</button>
+  <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <ul class="item-list">
+                <li class="item">
+                    <img class="img-list-backoffice" src="${item.imageUrl}" alt="logo">
+                    <div class="item-details">
+                        <span>${item.name}</span>
+                        <span>${item.brand}</span>
+                        <span class="price-item-backoffice">${item.price} €</span>
+                    </div>
+                    <div class="item-actions">
+                        <button onclick="editItem('${item._id}')" type="button" class="btn btn-primary">Edit</button>
+                        <button onclick="deleteItem('${item._id}')" type="button" class="btn btn-danger">Delete</button>
+                        <button onclick="updateItem('${item._id}')" type="button" class="btn btn-success">Save Changes</button>
+                    </div>
+                </li>   
+            </ul>
         </div>
-        </div>
+    </div>
+  </div>
         `;
   });
 };
@@ -110,8 +127,18 @@ const updateItem = async (id) => {
   });
 
   if (response.ok) {
+
+    // svuoto il form 
+
+    document.querySelector(".name-item").value = "";
+    document.querySelector(".brand-item").value = "";
+    document.querySelector(".price-item").value = "";
+    document.querySelector(".img-item").value = "";
+    document.querySelector(".description-item").value = "";
+
     alert("Save Changes");
     showItem();
+
     // Inserisco la funzione di js per ricaricare la pagina ogni volta
     window.location.reload();
   } else {
