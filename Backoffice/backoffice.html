@@ -12,11 +12,13 @@
 </head>
 
 <body>
+
+  <!-- Nav comune per tutte le pagine -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <img class="logo" src="../assets/pngwing.com.png" alt="logo">
-      <button class="navbar-toggler bg-body-tertiary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler bg-body-tertiary" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -31,7 +33,12 @@
       </div>
     </div>
   </nav>
+
+  <!-- TITOLO PAGINA -->
   <h1 class="titolo-add">ADD A PRODUCT NOW</h1>
+
+  <!-- FORM PER LA CREAZIONE/MODIFICA DELLE CARD -->
+
   <section class="add-a-product w-100 p-4 d-flex justify-content-center pb-4">
     <form>
       <!-- Name input -->
@@ -89,12 +96,13 @@
         </div>
       </div>
 
-      <!-- BOTTONE AGGIUNGERE LA CARD -->
+      <!-- BOTTONE PER AGGIUNGERE LA CARD -->
       <button id="button-submit" data-mdb-ripple-init="" type="button"
         class="btn btn-success rounded-4 p-2 fs-4 btn-block mb-4 ms-1">Add</button>
     </form>
   </section>
 
+  <!-- H3 PER I PRODOTTI GIà ESISTENTI -->
   <h3 class="text-center addedd">ADDEDD PRODUCTS <i class="bi bi-arrow-down-circle-fill"></i></h3>
 
   <!-- CONTAINER PER LE CARD CON I BOTTONI PER MODIFICARE/CANCELLARE/SALVARE -->

@@ -1,6 +1,6 @@
 const url = "https://striveschool-api.herokuapp.com/api/product/"
 
-//creo una funzione per stampare gli items creati. 
+// Creo una funzione per stampare in pagina gli items creati. 
 
 window.onload = async() => {
     const response = await fetch(url, {
@@ -16,6 +16,7 @@ window.onload = async() => {
     divItems.innerHTML = '';
 
     // utilizzo foreach per ciclare gli elementi e stamparli in pagina, con innerHTML.
+    // creo un unica card, dove prende i dati inseriti e li cambia ogni volta.
 
     items.forEach((item) => {
         divItems.innerHTML += `
@@ -32,7 +33,7 @@ window.onload = async() => {
         `;
     }).join();
 }; 
-    // Aggiungo questa funzione per inviare alla pagina detail la card con l'id cliccato
+    // Aggiungo questa funzione per inviare alla pagina detail la card con l'id passato come parametro.
 
 function showDetail(id) {
     window.location.href = `/Details/details.html?id=${id}`;

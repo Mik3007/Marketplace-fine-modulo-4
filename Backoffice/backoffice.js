@@ -12,6 +12,8 @@ const createItem = async () => {
     description: document.querySelector(".description-item").value,
   };
 
+  // Invio i dati al server con il metodo POST, utilizzando l'url e l'autorizzazione
+
   let response = await fetch(url, {
     method: "POST",
     headers: {
@@ -22,6 +24,8 @@ const createItem = async () => {
     body: JSON.stringify(newItem),
   });
   if (response.ok) {
+
+    // inserisco delle stringhe vuote come valore, in modo che se la risposta è ok, svuota i campi del form.
 
     document.querySelector(".name-item").value = "";
     document.querySelector(".brand-item").value = "";
@@ -49,9 +53,9 @@ window.onload = async () => {
     },
   });
   const items = await response.json();
-  let listItems = document.getElementById("list-items");
+  let listItems = document.getElementById("list-items"); // list-item lo utilizzo come contenitore per le card
 
-  // utilizzo map per ciclare gli elementi e stamparli in pagina, con innerHTML.
+  // utilizzo il foreach per ciclare gli elementi e stamparli in pagina, con innerHTML, creo già i 3 bottoni con l'onclick e la funzione inerente.
 
   items.forEach((item) => {
     listItems.innerHTML += `  
@@ -75,12 +79,11 @@ window.onload = async () => {
             </ul>
         </div>
     </div>
-  </div>
-        `;
+  </div>`;
   });
 };
 
-// Creo la funzione per modificare gli elementi
+  // Creo la funzione per modificare gli elementi, prendendo l'id dell'elemento cliccato.
 
 const editItem = async (id) => {
   if (id) {
@@ -92,7 +95,8 @@ const editItem = async (id) => {
     });
     const item = await response.json();
 
-    // Assegna i valori dell'item agli input
+    // faccio in modo che al momento del click, si ripopoli il form con il valore assegnato dagli input in precedenza.
+
     document.querySelector(".name-item").value = item.name;
     document.querySelector(".brand-item").value = item.brand;
     document.querySelector(".price-item").value = item.price;
@@ -100,6 +104,8 @@ const editItem = async (id) => {
     document.querySelector(".description-item").value = item.description;
   }
 };
+
+    // Creo la funzione per modificare gli elementi, e inviarli al server con il metodo PUT
 
 const updateItem = async (id) => {
   const name = document.querySelector(".name-item").value;
@@ -115,7 +121,7 @@ const updateItem = async (id) => {
     imageUrl: imageUrl,
     description: description,
   };
-  console.log(id);
+
   const response = await fetch(url + id, {
     method: "PUT",
     headers: {
@@ -137,7 +143,6 @@ const updateItem = async (id) => {
     document.querySelector(".description-item").value = "";
 
     alert("Save Changes");
-    showItem();
 
     // Inserisco la funzione di js per ricaricare la pagina ogni volta
     window.location.reload();
@@ -146,7 +151,7 @@ const updateItem = async (id) => {
   }
 };
 
-// Creo la funzione per eliminare gli elementi
+// Creo la funzione per eliminare gli elementi con il metodo DELETE
 
 const deleteItem = async (id) => {
   const response = await fetch(url + id, {

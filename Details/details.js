@@ -1,16 +1,16 @@
 // recupero l'id dell'elemento selezionato
 
 let id = new URLSearchParams(window.location.search).get("id");
-const url = "https://striveschool-api.herokuapp.com/api/product/"+ id;
+const url = "https://striveschool-api.herokuapp.com/api/product/" + id;
 
 window.onload = async () => {
   await detail();
-}
+};
 
-// faccio una fetch per recuperare i dati, prendendo l'id, aggiungendo all'url "+id"
+// faccio una fetch per recuperare i dati, prendendo l'id (aggiungendo all'url "+id")
 
 const detail = async () => {
-    if(id){
+  if (id) {
     const response = await fetch(url, {
       headers: {
         Authorization:
@@ -18,12 +18,12 @@ const detail = async () => {
       },
     });
     const item = await response.json();
-    
-// stampo a video con innerHTML i dati della card che mi servono
 
-    let detailItem = document.getElementById('detailCard');
-    
-        detailItem.innerHTML += `  
+    // stampo a video con innerHTML i dati della card che mi servono
+
+    let detailItem = document.getElementById("detailCard");
+
+    detailItem.innerHTML += `  
         <div class="card card-details mb-3">
         <div class="row g-0">
           <div class="col-md-4">
@@ -39,6 +39,5 @@ const detail = async () => {
         </div>
       </div>
             `;
-      };
-}
-
+  }
+};
