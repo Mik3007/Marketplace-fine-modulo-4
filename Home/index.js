@@ -38,3 +38,5 @@ window.onload = async() => {
 function showDetail(id) {
     window.location.href = `/Details/details.html?id=${id}`;
 }
+
+
